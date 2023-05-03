@@ -19,5 +19,7 @@ class DestProdutos extends Produto {
 }
 
 const produtos = new Produto("Caderno", "26/02/2023", "Caderno Universitário Fases da Lua 160 folhas", 55.5)
-const DestProdutos = new Destaque("Caderno", "26/02/2023", "Caderno Universitário Fases da Lua 160 folhas", 55.5)
+const DestProdutos = new DestProdutos("Caderno", "26/02/2023", "Caderno Universitário Fases da Lua 160 folhas", 55.5)
 console.log(produto.mostrarProdutos())
+console.log(DestProdutos.mostrarProdutos())
+
