@@ -25,7 +25,7 @@ class ProdutoDestaque extends Produto{
     }
 }
 
-const produto = new ProdutoDestaque("Estilhaça-me", "19/04/2023", "Livro", 23.99, "https://m.media-amazon.com/images/I/41VestZBywL._SX339_BO1,204,203,200_.jpg" );
+const produto = new ProdutoDestaque("Caderno universitário capa dura 1x1 80 folhas, Brief Azul, Spiral, 211695 - PT 1 UN", "17/05/2023", "Caderno", 55.99, "https://img.kalunga.com.br/fotosdeprodutos/139353d.jpg" );
 console.log(produto.mostrar_produto_destaque());
 
 const div = document.getElementById('ProdutoDestaque');
