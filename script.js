@@ -1,25 +1,32 @@
 // divListaProduto.insertAdjacentHTML('afterbegin', '');
 class Produto{
-    constructor(nome,dataCad, descricao, preco){
+    constructor(nome, data_cadastro, descricao, preco){
         this.nome = nome;
-        this.dataCad = dataCad;
+        this.data_cadastro = data_cadastro;
         this.descricao = descricao;
         this.preco = preco;
     }
-
-    mostrarProdutos(){
-        return this.nome + " " + this.dataCad + " " +  this.descricao + " " + this.preco
-    }
-
-}
-class DestProdutos extends Produto {
-    constructor(nome,dataCad, descricao, preco){
-        super (nome,dataCad, descricao, preco)
+    mostrar_produto(){
+        return this.nome +  this.data_cadastro + this.descricao + this.preco;
     }
 }
 
-const produtos = new Produto("Caderno", "26/02/2023", "Caderno Universitário Fases da Lua 160 folhas", 55.5)
-const DestProdutos = new DestProdutos("Caderno", "26/02/2023", "Caderno Universitário Fases da Lua 160 folhas", 55.5)
-console.log(produto.mostrarProdutos())
-console.log(DestProdutos.mostrarProdutos())
+class ProdutoDestaque extends Produto{
+    constructor(nome, data_cadastro, descricao, preco, produto_destaque){
+        super(nome, data_cadastro, descricao, preco);
+        this.produto_destaque = produto_destaque;
+    }
+    mostrar_produto_destaque(){
+        return `
+            <div clas="vermeio">${this.nome}</div>
+            <div>${this.data_cadastro}</div>
+        `
+        //return this.nome +  this.data_cadastro + this.descricao + this.preco + this.produto_destaque;
+    }
+}
 
+const produto = new ProdutoDestaque("Estilhaça-me", "19/04/2023", "Livro", 23.99, "https://m.media-amazon.com/images/I/41VestZBywL._SX339_BO1,204,203,200_.jpg" );
+console.log(produto.mostrar_produto_destaque());
+
+const div = document.getElementById('ProdutoDestaque');
+div.insertAdjacentHTML('afterbegin', produto.mostrar_produto_destaque());
